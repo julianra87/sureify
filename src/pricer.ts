@@ -44,7 +44,7 @@ function totalPrice(state: SelectionState): Price {
 }
 
 /**
- * Pure transition: next snapshot from a snapshot and one selection (does not mutate `current`).
+ * Next snapshot from a snapshot and one selection (does not mutate `current`).
  */
 function applySelection(
   current: SelectionState,
@@ -64,7 +64,7 @@ function applySelection(
 }
 
 /**
- * Pure: current options are entirely determined by the ordered event log + seed.
+ * Current options are entirely determined by the ordered event log + seed.
  * No mutable “current state” — only replay.
  */
 function stateAfterEvents(events: readonly SelectionEvent[], seed: SelectionState): SelectionState {
