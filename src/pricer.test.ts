@@ -11,4 +11,11 @@ describe('createPricer', () => {
     expect(pricer('creamer', 'non-dairy')).toBe(1.5);
     expect(pricer('size', 'large')).toBe(2.5);
   });
+
+  it('changing size replaces the previous size (no stacking)', () => {
+    const pricer = createPricer();
+    pricer('size', 'small');
+    pricer('creamer', 'none');
+    expect(pricer('size', 'medium')).toBe(1.5);
+  });
 });
