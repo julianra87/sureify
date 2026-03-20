@@ -5,7 +5,7 @@ describe('createPricer', () => {
     const pricer = createPricer();
 
     pricer('size', 'small');
-    expect(pricer('creamer', 'none')).toBe(1);
+    expect(pricer('creamer', 'none')).toBe(1.0);
 
     expect(pricer('creamer', 'dairy')).toBe(1.25);
     expect(pricer('creamer', 'non-dairy')).toBe(1.5);

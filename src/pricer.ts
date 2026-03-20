@@ -11,8 +11,25 @@ export interface Pricer {
   (category: Category, option: Option): Price;
 }
 
-const SIZE_PRICE = { small: 1, medium: 1.5, large: 2 } as const;
-const CREAMER_PRICE = { none: 0, dairy: 0.25, 'non-dairy': 0.5 } as const;
+const SIZE_PRICE: {
+  readonly small: number;
+  readonly medium: number;
+  readonly large: number;
+} = {
+  small: 1,
+  medium: 1.5,
+  large: 2,
+};
+
+const CREAMER_PRICE: {
+  readonly none: number;
+  readonly dairy: number;
+  readonly 'non-dairy': number;
+} = {
+  none: 0,
+  dairy: 0.25,
+  'non-dairy': 0.5,
+};
 
 type SizeOption = keyof typeof SIZE_PRICE;
 type CreamerOption = keyof typeof CREAMER_PRICE;
